@@ -2,6 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const config = require('config')
 
+const items = require('./routes/api/items');
+
 const app = express();
 
 //body-parser middleware
@@ -18,6 +20,9 @@ mongoose
     })
     .then(() => console.log('MongoDB connected'))
     .catch(err => console.log(err));
+
+//use routes
+app.use('/api/items', items);
 
 // serve static assets if in production
 if(process.env.NODE_ENV == 'production') {
