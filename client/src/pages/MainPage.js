@@ -10,6 +10,8 @@ import LandingSection from '../components/LandingSection';
 import CategorySection from '../components/CategorySection';
 import StuffedAnimalsSection from '../components/StuffedAnimalsSection';
 import WoodenToysSection from '../components/WoodenToysSection';
+import ParallaxSection from '../components/ParallaxSection';
+import AboutSection from '../components/AboutSection';
 import { connect } from 'react-redux'
 
 const mainStyle = {
@@ -25,6 +27,8 @@ export class MainPage extends Component {
                 <CategorySection />
                 <StuffedAnimalsSection />
                 <WoodenToysSection />
+                <ParallaxSection />
+                <AboutSection />
             </div>
         )
     }
