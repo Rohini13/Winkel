@@ -23,12 +23,31 @@ export class NavBar extends Component {
     render() {
         return (
             <div>
-                <Navbar color="dark" dark expand="sm" className="mb-5">
+                <Navbar fixed="top" color="light" light expand="md"/* className="mb-5"*/>
                     <Container>
                         <NavbarBrand href="/">Winkel</NavbarBrand>
                         <NavbarToggler onClick={this.toggle} />
                         <Collapse isOpen={this.state.isOpen} navbar>
+                        <Nav className="mr-auto" navbar>
+                            <NavItem>
+                            <NavLink href="#">Catalog</NavLink>
+                            </NavItem>
+                            <NavItem>
+                            <NavLink href="#">Delivery</NavLink>
+                            </NavItem>
+                            <NavItem>
+                            <NavLink href="#">About</NavLink>
+                            </NavItem>
+                            <NavItem>
+                            <NavLink href="#">Contact</NavLink>
+                            </NavItem>
+                        </Nav>
                             <Nav className="ml-auto" navbar>
+                                <NavItem>
+                                    <NavLink href="#">
+                                        Cart
+                                    </NavLink>
+                                </NavItem>
                                 <NavItem>
                                     <NavLink href="/register">
                                         Register

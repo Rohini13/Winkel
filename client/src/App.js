@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
 import LoginPage from './pages/LoginPage'
 import RegisterPage from './pages/RegisterPage'
+import MainPage from './pages/MainPage'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import NavBar from './components/NavBar';
 import store from './store'
@@ -16,6 +17,9 @@ function App() {
       <Router history={history}>
         <Provider store={store}>
           <NavBar />
+          <Route exact path="/main" render={() =>
+            <MainPage />
+          }></Route>
           <Route exact path="/register" render={() =>
             <RegisterPage />
           }></Route>
