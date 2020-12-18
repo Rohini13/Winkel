@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-import ItemSchema from './Item';
+const {ItemSchema} = require('./Item')
 
-//create schema
 const UserSchema = new Schema({
     username: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     email: {
         type: String,
@@ -17,11 +17,25 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
-    cartItems: [ItemSchema],
     address: {
-        type: String,
-        required: true
+        hno:{
+            type: String,
+            required: true
+        },
+        city:{
+            type: String,
+            required: true
+        },
+        state:{
+            type: String,
+            required: true
+        },
+        pincode:{
+            type: String,
+            required: true
+        }
     },
+    cartItems: [ItemSchema],
     register_date: {
         type: Date,
         default: Date.now

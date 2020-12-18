@@ -21,10 +21,14 @@
   },
   "homepage": "https://github.com/griffy06/Winkel#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "concurrently": "^5.3.0",
     "config": "^3.3.3",
     "express": "^4.17.1",
-    "mongoose": "^5.11.8"
+    "express-session": "^1.17.1",
+    "mongoose": "^5.11.8",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.6"
