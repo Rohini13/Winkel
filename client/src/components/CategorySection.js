@@ -61,7 +61,7 @@ const buttonStyle = {
     color: "black",
 }
 
-export class LandingSection extends Component {
+export class CategorySection extends Component {
     render() {
         return (
             <Container style={ sectionStyle }>
@@ -89,4 +89,4 @@ export class LandingSection extends Component {
     }
 }
 
-export default connect()(LandingSection);
+export default connect()(CategorySection);

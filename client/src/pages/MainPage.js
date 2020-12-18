@@ -8,6 +8,8 @@ import {
 } from 'reactstrap';
 import LandingSection from '../components/LandingSection';
 import CategorySection from '../components/CategorySection';
+import StuffedAnimalsSection from '../components/StuffedAnimalsSection';
+import WoodenToysSection from '../components/WoodenToysSection';
 import { connect } from 'react-redux'
 
 const mainStyle = {
@@ -21,6 +23,8 @@ export class MainPage extends Component {
             <div className='container' style={mainStyle}>
                 <LandingSection />
                 <CategorySection />
+                <StuffedAnimalsSection />
+                <WoodenToysSection />
             </div>
         )
     }
