@@ -54,7 +54,7 @@ export class StuffedAnimalsSection extends Component {
                     <Jumbotron  style={ JumbotronStyle }>
                         <img src={stuffedAnimal} style={imageStyle}></img>
                         <br /><br /><h5>Teddy Bear</h5><br />
-                        <Button style={buttonStyle}>Rs. 250</Button>
+                            <Button className='btn'style={buttonStyle}>Rs. 250</Button>
                     </Jumbotron>
                     </div>
                 </Col>

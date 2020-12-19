@@ -54,7 +54,7 @@ export class WoodenToysSection extends Component {
                     <Jumbotron  style={ JumbotronStyle }>
                         <img src={woodenToy} style={imageStyle}></img>
                         <br /><br /><h5>Happy Flower</h5><br />
-                        <Button style={buttonStyle}>Rs. 200</Button>
+                        <Button className='btn'style={buttonStyle}>Rs. 200</Button>
                     </Jumbotron>
                     </div>
                 </Col>

@@ -52,7 +52,7 @@ export class ParallaxSection extends Component {
             <section style={ sectionStyle }>
             <div style={{textAlign:"center", float:"left"}}>
                 <h3> Need a warm cuddly bear hug?</h3><br /><br />
-                <Button style={buttonStyle}>Shop Now</Button>
+                    <Button className='btn'style={buttonStyle}>Shop Now</Button>
             </div>   
             </section>
         )
