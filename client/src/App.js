@@ -3,6 +3,9 @@ import './App.css';
 import LoginPage from './pages/LoginPage'
 import RegisterPage from './pages/RegisterPage'
 import MainPage from './pages/MainPage'
+import AllItemsPage from './pages/AllItemsPage';
+import StuffedAnimalsPage from './pages/StuffedAnimalsPage';
+import WoodenToysPage from './pages/WoodenToysPage';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import NavBar from './components/NavBar';
 import store from './store'
@@ -10,7 +13,6 @@ import { Provider } from 'react-redux'
 import history from './history'
 import Message from './pages/Message';
 import Footer from './components/Footer';
-
 
 function App() {
   return (
@@ -20,6 +22,15 @@ function App() {
           <NavBar />
           <Route exact path="/main" render={() =>
             <MainPage />
+          }></Route>
+          <Route exact path="/allitems" render={() =>
+            <AllItemsPage />
+          }></Route>
+          <Route exact path="/stuffedanimals" render={() =>
+            <StuffedAnimalsPage />
+          }></Route>
+          <Route exact path="/woodentoys" render={() =>
+            <WoodenToysPage />
           }></Route>
           <Route exact path="/register" render={() =>
             <RegisterPage />
