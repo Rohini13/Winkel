@@ -10,19 +10,31 @@ import {
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { login } from '../actions/authAction'
+import loadingBackground from '../images/loginwall.jpg';
 
-const section = {
-    marginTop: '10rem'
-}
-
+const sectionStyle = {
+    width: "1000x",
+    height: "600px",
+    backgroundImage: "url(" + loadingBackground + ")",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "100%"
+};
 
 const JumbotronStyle = {
-    background: "F5F5F5",
+    background: '#e75480',
+    position: "absolute",
     marginTop: "10rem",
-    width: "80%",
+    marginLeft: "20rem",
+    width: "50%",
     borderRadius: "20px",
-    padding: "25px",
+    padding: "25px", 
+    opacity: '0.9',
 };
+
+const labelStyle ={
+    align: 'left',
+    color:'white',
+}
 
 export class LoginPage extends Component {
     state = {
@@ -40,25 +52,28 @@ export class LoginPage extends Component {
     }
     render() {
         return (
-            <div className='container' align='center'>
+            <div style={sectionStyle}>
                 <Jumbotron style={JumbotronStyle}>
+                    <h3 style={{textAlign:'center', color:'white'}}>
+                        LOGIN TO WINKEL ;)
+                    </h3>
                     <Form onSubmit={this.onSubmit}>
-                        <FormGroup>
-                            <Label for="username">Username</Label>
+                        <FormGroup style={labelStyle}>
+                            <Label for="username">USERNAME</Label>
                             <Input type="text"
                                 name="username"
                                 placeholder="Enter Username"
                                 onChange={this.onChange} />
                         </FormGroup>
 
-                        <FormGroup>
-                            <Label for="password">Password</Label>
+                        <FormGroup style={labelStyle}>
+                            <Label for="password">PASSWORD</Label>
                             <Input type="password"
                                 name="password"
                                 placeholder="Enter Password"
                                 onChange={this.onChange} />
                         </FormGroup>
-                        <Button color="dark" style={{ marginTop: '2rem' }} block>
+                        <Button className='button' style={{ marginLeft: '12rem' }}>
                             Login
                     </Button>
                     </Form>

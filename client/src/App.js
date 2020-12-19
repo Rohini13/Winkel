@@ -33,6 +33,9 @@ function App() {
           <Route exact path="/registered" render={() =>
             <Message msg={'User Registered'} />
           }></Route>
+          <Route exact path="/logout" render={() =>
+            <Message msg={'User Logged Out!'} />
+          }></Route>
           <Footer />
         </Provider>
       </Router>

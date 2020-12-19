@@ -2,15 +2,6 @@ import SimpleReactFooter from "simple-react-footer";
 
 import React, { Component } from 'react'
 
-const imageStyle = {
-    float: "center",
-    width: "100%",
-}
-
-const footer ={
-    marginTop: '10rem'
-}
-
 export class Footer extends Component {
     render() {
         const description = "Winkel is here to deliver smiles at your doorsteps. It has an amazing collection of toys ranging from cute stuffed animals to inquisitive games that will ignite the curiosity within your child. Don't let your kid get bored during this lockdown. Bring home a friend for your child. Bring home happiness.";
@@ -20,7 +11,7 @@ export class Footer extends Component {
                 title: "About",
                 resources: [
                     {
-                        name: "Winkels",
+                        name: "Winkel",
                         link: "/about"
                     },
                     {
@@ -53,9 +44,8 @@ export class Footer extends Component {
                 ]
             }
         ];
-        return (<div style={footer}>
+        return (
             <SimpleReactFooter
-                style={footer}
                 description={description}
                 title={title}
                 columns={columns}
@@ -64,8 +54,7 @@ export class Footer extends Component {
                 backgroundColor="yellowgreen"
                 fontColor="white"
                 copyrightColor="grey"
-            />
-        </div>)
+            />)
         
     };
 }
