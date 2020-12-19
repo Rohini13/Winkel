@@ -45,16 +45,20 @@ export class Footer extends Component {
             }
         ];
         return (
-            <SimpleReactFooter
-                description={description}
-                title={title}
-                columns={columns}
-                copyright="Rohini & Cheena"
-                iconColor="white"
-                backgroundColor="pink"
-                fontColor="white"
-                copyrightColor="grey"
-            />)
+            <div style={{ display: 'flex', width: '100%', float:'center' }}>
+                <SimpleReactFooter
+                    description={description}
+                    title={title}
+                    columns={columns}
+                    copyright="Rohini & Cheena"
+                    iconColor="white"
+                    backgroundColor="pink"
+                    fontColor="white"
+                    copyrightColor="grey"
+                />
+
+            </div>
+            )
         
     };
 }

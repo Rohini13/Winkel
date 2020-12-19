@@ -12,9 +12,6 @@ import woodenToy from '../images/woodenToy.png'
 import {Link} from 'react-router-dom'
 
 const sectionStyle = {
-    //marginLeft: "-80px",
-    // width: "1270px",
-    // height: "570px",
     marginLeft: "-6rem",
     width: "81rem",
     height: "35rem",

@@ -6,23 +6,22 @@ import kids from '../images/kids.jpg';
 import { connect } from 'react-redux'
 
 const sectionStyle = {
-    marginLeft: "-5rem",
-    marginRight: "-5rem",
-    marginTop: "5rem",
-    marginBottom: "25rem",
-    padding: "70px"
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: "100%",
 }
 
 const imageStyle = {
     float: "left",
     width: "35rem",
-    borderRadius: "35px"
+    borderRadius: "35px",
+    padding: '25px'
 }
 
 const textStyle = {
     width: "50%",
     float: "right",
-    padding: '60px',
     textAlign: "center",
     fontFamily: "Cursive",
     fontSize: "15px"

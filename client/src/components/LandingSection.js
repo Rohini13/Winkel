@@ -8,12 +8,11 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom';
 
 const sectionStyle = {
-    //marginLeft: "-80px",
-    // width: "1270px",
-    // height: "570px",
-    marginLeft: "-6rem",
-    width: "81rem",
-    height: "35rem",
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: "550px",
+    width: "100%",
     backgroundImage: "url(" + loadingBackground + ")",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover"
@@ -21,14 +20,8 @@ const sectionStyle = {
 
 const JumbotronStyle = {
     background: "white",
-    opacity: "0.8",
-    position: "absolute",
-    // marginLeft: "300px",
-    // marginTop: "220px",
-    marginLeft: "20rem",
-    marginTop: "14rem",
-    width: "50%",
-    //border: "3px solid black",
+    opacity: "0.9",
+    width: "100%",
     borderRadius: "20px",
     padding: "20px",
     textAlign: "center"
