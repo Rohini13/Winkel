@@ -7,6 +7,7 @@ const session = require('express-session')
 
 const items = require('./routes/api/items');
 const index = require('./routes/api/index');
+const cart = require('./routes/api/cart');
 
 const app = express();
 
@@ -41,6 +42,7 @@ mongoose
 //use routes
 app.use('/api/items', items);
 app.use('/api', index);
+app.use('/api/cart', cart);
 
 // serve static assets if in production
 if(process.env.NODE_ENV == 'production') {
