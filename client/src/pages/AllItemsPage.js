@@ -53,7 +53,7 @@ class DisplayItem extends Component {
                 <Jumbotron  style={ JumbotronStyle }>
                     <img src={require(`../${this.props.item.image}`).default} style={imageStyle}></img>
                     <br /><br /><h5>{this.props.item.name}</h5><br />
-                    <Button style={buttonStyle}>{this.props.item.price}</Button>
+                    <Button className='btn' style={buttonStyle}>{this.props.item.price}</Button>
                 </Jumbotron>
             </div>
         )

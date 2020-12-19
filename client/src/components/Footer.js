@@ -51,7 +51,7 @@ export class Footer extends Component {
                 columns={columns}
                 copyright="Rohini & Cheena"
                 iconColor="white"
-                backgroundColor="yellowgreen"
+                backgroundColor="pink"
                 fontColor="white"
                 copyrightColor="grey"
             />)

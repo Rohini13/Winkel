@@ -12,17 +12,17 @@ import {
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { logout } from '../actions/authAction'
-import logop from '../images/logop.png'
-import logow from '../images/logow.png'
+import logop from '../images/logo2p.png'
+import logow from '../images/logo2w.png'
 
 
 
 export class NavBar extends Component {
     listenScrollEvent = e => {
         if (window.scrollY > 50) {
-            this.setState({ bg: "yellowgreen", tg: 'white' , logo:logow});
+            this.setState({ bg: "pink", tg: 'white' , logo:logow});
         } else {
-            this.setState({ bg: "transparent", tg: "#e75480" , logo: logop});
+            this.setState({ bg: "beige", tg: "#e75480" , logo: logop});
         }
     };
 
@@ -30,7 +30,7 @@ export class NavBar extends Component {
         window.addEventListener("scroll", this.listenScrollEvent);
     }
     state = { isOpen: false,
-    bg:'transparent',
+    bg:'beige',
         tg: '#e75480', 
     logo: logop,
  }
@@ -44,7 +44,7 @@ export class NavBar extends Component {
             <div>
                 <Navbar fixed="top" expand="md" /* className="mb-5"*/ style={{ backgroundColor: this.state.bg, color: this.state.tg, opacity:0.9}} light>
                     <Container>
-                        <NavbarBrand href="/main"><img className='logo'src={this.state.logo} width='70px'/></NavbarBrand>
+                        <NavbarBrand href="/main"><img className='logo'src={this.state.logo} width='100px'/></NavbarBrand>
                         <NavbarToggler onClick={this.toggle} />
                         <Collapse isOpen={this.state.isOpen} navbar>
                             <Nav className="mr-auto" navbar  >

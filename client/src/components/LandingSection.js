@@ -41,7 +41,7 @@ export class LandingSection extends Component {
                 <div>
                     <Jumbotron style={JumbotronStyle}>
                         <h3 className="display-4">Welcome to Winkel</h3><br></br>
-                        <Link to="/allitems"><Button className='btn'>Open Catalog</Button></Link>
+                        <Link to="/allitems"><Button className='button'>Open Catalog</Button></Link>
                     </Jumbotron>
                 </div>
             </section>
