@@ -28,7 +28,7 @@ export class NavBar extends Component {
             <div>
                 <Navbar class="navbar" fixed="top" expand="md" /* className="mb-5"*/ >
                     <Container>
-                        <NavbarBrand href="/main"><img src={logo} width='100px'/></NavbarBrand>
+                        <NavbarBrand href="/main"><img src={logo} width='70px'/></NavbarBrand>
                         <NavbarToggler onClick={this.toggle} />
                         <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="mr-auto" navbar>
