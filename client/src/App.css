@@ -1,0 +1,19 @@
+.navbar {
+  background-color: yellowgreen;
+}
+
+.inactive {
+    color: #fff;
+    text-decoration: none;
+}
+
+.active {
+    color: black;
+    text-decoration: none;
+  }
+
+  .inactive:hover {
+        color: #fff;
+
+    font-weight: bold;
+}

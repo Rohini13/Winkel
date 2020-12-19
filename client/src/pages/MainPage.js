@@ -28,7 +28,7 @@ export class MainPage extends Component {
                 <StuffedAnimalsSection />
                 <WoodenToysSection />
                 <ParallaxSection />
-                <AboutSection />
+                <AboutSection/>
             </div>
         )
     }

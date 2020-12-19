@@ -9,6 +9,7 @@ import store from './store'
 import { Provider } from 'react-redux'
 import history from './history'
 import Message from './pages/Message';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
           <Route exact path="/registered" render={() =>
             <Message msg={'User Registered'} />
           }></Route>
+          <Footer />
         </Provider>
       </Router>
     </div>
