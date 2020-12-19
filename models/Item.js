@@ -6,11 +6,15 @@ const ItemSchema = new Schema({
         type: String,
         required: true
     },
-    /*image: {
+    image: {
         type: String
-    },*/
+    },
     price: {
-        type: Number,
+        type: String,
+        required: true
+    },
+    category: {
+        type: String,
         required: true
     },
     date: {
