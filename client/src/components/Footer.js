@@ -59,12 +59,6 @@ export class Footer extends Component {
                 description={description}
                 title={title}
                 columns={columns}
-                linkedin="#"
-                facebook="#"
-                twitter="#"
-                instagram=""
-                youtube="#"
-                pinterest="#"
                 copyright="Rohini & Cheena"
                 iconColor="white"
                 backgroundColor="yellowgreen"
