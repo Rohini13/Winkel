@@ -13,6 +13,9 @@ import { login } from '../actions/authAction'
 import loadingBackground from '../images/loginwall.jpg';
 
 const sectionStyle = {
+    display: 'flex', 
+    alignItems: 'center', 
+    justifyContent: 'center',
     width: "1000x",
     height: "600px",
     backgroundImage: "url(" + loadingBackground + ")",
@@ -22,9 +25,6 @@ const sectionStyle = {
 
 const JumbotronStyle = {
     background: '#e75480',
-    position: "absolute",
-    marginTop: "10rem",
-    marginLeft: "20rem",
     width: "50%",
     borderRadius: "20px",
     padding: "25px", 
@@ -73,7 +73,7 @@ export class LoginPage extends Component {
                                 placeholder="Enter Password"
                                 onChange={this.onChange} />
                         </FormGroup>
-                        <Button className='button' style={{ marginLeft: '12rem' }}>
+                        <Button className='button' style={{ display: 'flex', margin: 'auto', justifyContent: 'center', alignItems: 'center', }} >
                             Login
                     </Button>
                     </Form>

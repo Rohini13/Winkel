@@ -42,7 +42,7 @@ export class NavBar extends Component {
     render() {
         return (
             <div>
-                <Navbar fixed="top" expand="md" /* className="mb-5"*/ style={{ backgroundColor: this.state.bg, color: this.state.tg, opacity:0.9}}>
+                <Navbar fixed="top" expand="md" /* className="mb-5"*/ style={{ backgroundColor: this.state.bg, color: this.state.tg, opacity:0.9}} light>
                     <Container>
                         <NavbarBrand href="/main"><img className='logo'src={this.state.logo} width='70px'/></NavbarBrand>
                         <NavbarToggler onClick={this.toggle} />

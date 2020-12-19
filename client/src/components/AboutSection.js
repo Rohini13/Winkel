@@ -9,7 +9,7 @@ const sectionStyle = {
     marginLeft: "-5rem",
     marginRight: "-5rem",
     marginTop: "5rem",
-    marginBottom: "5rem",
+    marginBottom: "25rem",
     padding: "70px"
 }
 
@@ -21,9 +21,9 @@ const imageStyle = {
 
 const textStyle = {
     width: "50%",
-    marginLeft: "35rem",
+    float: "right",
+    padding: '60px',
     textAlign: "center",
-    padding: "100px",
     fontFamily: "Cursive",
     fontSize: "15px"
 }
@@ -37,7 +37,9 @@ export class AboutSection extends Component {
                     <h3>
                         Bring a friend for your little one!
                     </h3>
-                    "You’ve got a friend in me. You got troubles and I got ’em, too. There isn’t anything I wouldn’t do for you. We stick together, we can see it through ’cause you’ve got a friend in me."
+                    <p>
+                        "You’ve got a friend in me. <br/>You got troubles and I got ’em, too.<br/> There isn’t anything I wouldn’t do for you. <br/>We stick together, we can see it through <br/>’cause you’ve got a friend in me."
+                    </p>
             </div>
             </section>
         )

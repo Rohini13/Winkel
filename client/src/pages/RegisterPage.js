@@ -15,6 +15,9 @@ import { register } from '../actions/authAction'
 import loadingBackground from '../images/loginwall.jpg';
 
 const sectionStyle = {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
     width: "1000x",
     height: "800px",
     backgroundImage: "url(" + loadingBackground + ")",
@@ -25,8 +28,6 @@ const sectionStyle = {
 const JumbotronStyle = {
     background: '#e75480',
     position: "absolute",
-    marginTop: "8rem",
-    marginLeft: "25rem",
     width: "40%",
     borderRadius: "20px",
     padding: "25px",
@@ -131,7 +132,7 @@ export class RegisterPage extends Component {
                             </Row>
 
                         </FormGroup>
-                        <Button className='button' style={{marginLeft:'8rem'}}>
+                        <Button className='button' style={{ display: 'flex', margin: 'auto', justifyContent: 'center', alignItems: 'center', }} >
                             Register
                     </Button>
                     </Form>

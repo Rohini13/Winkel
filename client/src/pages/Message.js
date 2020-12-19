@@ -3,6 +3,9 @@ import { Jumbotron } from 'reactstrap';
 import loadingBackground from '../images/loginwall.jpg';
 
 const sectionStyle = {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
     width: "1000x",
     height: "800px",
     backgroundImage: "url(" + loadingBackground + ")",
@@ -13,8 +16,6 @@ const sectionStyle = {
 const JumbotronStyle = {
     background: '#e75480',
     position: "absolute",
-    marginTop: "20rem",
-    marginLeft: "25rem",
     width: "500px",
     borderRadius: "20px",
     padding: "25px",
