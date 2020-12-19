@@ -49,7 +49,7 @@ export class NavBar extends Component {
                         <Collapse isOpen={this.state.isOpen} navbar>
                             <Nav className="mr-auto" navbar  >
                             <NavItem>
-                                    <NavLink href="#" className='inactive' style={{ color: this.state.tg }}>Catalog</NavLink>
+                                    <NavLink href="/allitems" className='inactive' style={{ color: this.state.tg }}>Catalog</NavLink>
                             </NavItem>
                             <NavItem>
                                     <NavLink href="#" className="inactive" style={{ color: this.state.tg }}>Delivery</NavLink>
