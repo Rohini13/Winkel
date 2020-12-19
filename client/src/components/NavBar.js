@@ -33,7 +33,7 @@ export class NavBar extends Component {
                         <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="mr-auto" navbar>
                             <NavItem>
-                                    <NavLink href="#" className="inactive" exact activeClassName="active">Catalog</NavLink>
+                                    <NavLink href="/allitems" className="inactive" exact activeClassName="active">Catalog</NavLink>
                             </NavItem>
                             <NavItem>
                                     <NavLink href="#" className="inactive" activeClassName="active">Delivery</NavLink>

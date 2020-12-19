@@ -11,6 +11,7 @@ import stuffedAnimal from '../images/stuffedAnimal.png'
 import megaPlushToy from '../images/megaPlushToy.png'
 import cuteDog from '../images/cuteDog.png'
 import littleFriend from '../images/littleFriend.png'
+import {Link} from 'react-router-dom';
 
 const sectionStyle = {
     //marginLeft: "-80px",

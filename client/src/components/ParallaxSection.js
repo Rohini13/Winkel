@@ -3,7 +3,8 @@ import {
     Button
 } from 'reactstrap';
 import teddybear from '../images/teddybear.jpg';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import {Link} from 'react-router-dom';
 
 const sectionStyle = {
     /* The image used */
@@ -52,7 +53,7 @@ export class ParallaxSection extends Component {
             <section style={ sectionStyle }>
             <div style={{textAlign:"center", float:"left"}}>
                 <h3> Need a warm cuddly bear hug?</h3><br /><br />
-                <Button style={buttonStyle}>Shop Now</Button>
+                <Link to="/allitems"><Button style={buttonStyle}>Shop Now</Button></Link>
             </div>   
             </section>
         )

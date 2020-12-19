@@ -9,6 +9,7 @@ import {
 import { connect } from 'react-redux'
 import stuffedAnimal from '../images/stuffedAnimal.png'
 import woodenToy from '../images/woodenToy.png'
+import {Link} from 'react-router-dom'
 
 const sectionStyle = {
     //marginLeft: "-80px",
@@ -70,7 +71,7 @@ export class CategorySection extends Component {
                     <Jumbotron  style={ JumbotronStyle1 }>
                         <img src={stuffedAnimal} style={imageStyle1}></img>
                         <br /><h3>Stuffed Animals</h3><br />
-                        <Button style={buttonStyle}>Shop Now</Button>
+                        <Link to="/stuffedanimals"><Button style={buttonStyle}>Shop Now</Button></Link>
                     </Jumbotron>
                     </div>
                 </Col>
@@ -79,7 +80,7 @@ export class CategorySection extends Component {
                     <Jumbotron  style={ JumbotronStyle2 }>
                         <img src={woodenToy} style={imageStyle2}></img>
                         <br /><h3>Wooden Toys</h3><br />
-                        <Button style={buttonStyle}>Shop Now</Button>
+                        <Link to="/woodentoys"><Button style={buttonStyle}>Shop Now</Button></Link>
                     </Jumbotron>
                     </div>
                 </Col>

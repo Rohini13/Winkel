@@ -5,6 +5,7 @@ import {
 } from 'reactstrap';
 import loadingBackground from '../images/loadingBackground.jpg';
 import { connect } from 'react-redux'
+import {Link} from 'react-router-dom';
 
 const sectionStyle = {
     //marginLeft: "-80px",
@@ -40,7 +41,7 @@ export class LandingSection extends Component {
                 <div>
                 <Jumbotron  style={ JumbotronStyle }>
                     <h3 className="display-4">Welcome to Winkel</h3><br></br>
-                    <Button>Open Catalog</Button>
+                    <Link to="/allitems"><Button>Open Catalog</Button></Link>
                 </Jumbotron>
                 </div>
             </section>
