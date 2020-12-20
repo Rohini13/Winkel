@@ -10,6 +10,8 @@ const sectionStyle = {
     alignItems: 'center',
     justifyContent: 'center',
     width: "100%",
+    marginTop: "5rem",
+
 }
 
 const imageStyle = {

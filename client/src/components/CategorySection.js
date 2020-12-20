@@ -67,7 +67,7 @@ export class CategorySection extends Component {
                     <div>
                     <Jumbotron  style={ JumbotronStyle1 }>
                         <img src={stuffedAnimal} style={imageStyle1}></img>
-                        <br /><h3>Stuffed Animals</h3><br />
+                        <br /><h3>Stuffed Toys</h3><br />
                         <Link to="/stuffedanimals"><Button style={buttonStyle}>Shop Now</Button></Link>
                     </Jumbotron>
                     </div>

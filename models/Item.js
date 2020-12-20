@@ -20,6 +20,11 @@ const ItemSchema = new Schema({
     date: {
         type: Date,
         default: Date.now
+    },
+    description:{
+        type: String,
+        required: true,
+        default: "I'm not your toy (not your toy).You stupid boy(stupid boy).I'll take you down now, make you watch me.Dancing with my dolls on the motha- bucka beat.Not your toy…"
     }
 });
 

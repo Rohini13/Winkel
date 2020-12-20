@@ -41,7 +41,7 @@ const spanStyle = {
 }
 
 const LinkStyle = {
-    color: "#0000A0",
+    color: "hotpink",
 }
 
 
@@ -79,7 +79,7 @@ export class StuffedAnimalsPage extends Component {
             <div className='container' style={mainStyle}>
                 <h3>Stuffed Animals</h3>
                 <span style={spanStyle}>
-                    <Link to="/allitems" style={LinkStyle}>All Items </Link>| 
+                    <Link to="/allitems" style={LinkStyle}>All Toys </Link>| 
                     <Link to="/stuffedanimals" style={LinkStyle}> Stuffed Animals </Link>| 
                     <Link to="/woodentoys" style={LinkStyle}> Wooden Toys </Link></span><hr />
                 <Row>

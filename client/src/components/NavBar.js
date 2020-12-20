@@ -57,9 +57,6 @@ export class NavBar extends Component {
                             <NavItem>
                                     <NavLink href="#" className="inactive" style={{ color: this.state.tg }} >About</NavLink>
                             </NavItem>
-                            <NavItem>
-                                    <NavLink href="#" className="inactive" style={{ color: this.state.tg }}>Contact</NavLink>
-                            </NavItem>
                         </Nav>
                             <Nav className="ml-auto" navbar>
                                 <NavItem>

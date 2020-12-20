@@ -13,6 +13,7 @@ import { Provider } from 'react-redux'
 import history from './history'
 import Message from './pages/Message';
 import Footer from './components/Footer';
+import Toy from './pages/Toy';
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
       <Router history={history}>
         <Provider store={store}>
           <NavBar />
+          <Route exact path="/toydescription/:id" render={(props) =>
+            <Toy id={props.match.params.id}/>
+          }></Route>
           <Route exact path="/main" render={() =>
             <MainPage />
           }></Route>

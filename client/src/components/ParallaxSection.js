@@ -20,6 +20,7 @@ const sectionStyle = {
   backgroundSize: "cover",
   marginLeft: "-5rem",
   marginRight: "-5rem",
+  marginTop: "5rem",
   color: "white",
   padding: "130px"
 };
@@ -32,20 +33,6 @@ const buttonStyle = {
     width: "8rem"
 }
 
-/*const JumbotronStyle = {
-    background: "white",
-    opacity: "0.8",
-    position: "absolute",
-    // marginLeft: "300px",
-    // marginTop: "220px",
-    marginLeft: "20rem",
-    marginTop: "14rem",
-    width: "50%",
-    //border: "3px solid black",
-    borderRadius: "20px",
-    padding: "20px",
-    textAlign: "center"
-};*/
 
 export class ParallaxSection extends Component {
     render() {
