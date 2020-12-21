@@ -45,7 +45,7 @@ export class Footer extends Component {
             }
         ];
         return (
-            <div style={{ display: 'flex', width: '100%', float:'center' }}>
+            <div style={{ display: 'flex', width: '100%', float:'center', marginTop: '8rem' }}>
                 <SimpleReactFooter
                     description={description}
                     title={title}
