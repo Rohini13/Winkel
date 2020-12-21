@@ -45,3 +45,14 @@
     -ms-transform: scale(1.1,1.1);
     -webkit-transform: scale(1.1,1.1);
 }
+
+.link {
+      color:deeppink;
+      text-decoration: none;
+}
+
+.link:hover {
+      color:hotpink;
+      text-decoration: none;
+      font-weight: bold;
+}

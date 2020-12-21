@@ -42,12 +42,6 @@ const spanStyle = {
     float: "left",
 }
 
-const LinkStyle = {
-    color: "hotpink",
-}
-
-
-
 export class Toy extends Component {
     state={
         Item:{
@@ -73,9 +67,11 @@ export class Toy extends Component {
                 <Row>
                     <Jumbotron style={JumbotronStyle1}>
                         <span style={spanStyle}>
-                            <Link to="/allitems" style={LinkStyle}>All Toys </Link>|
-                    <Link to="/stuffedanimals" style={LinkStyle}> Stuffed Animals </Link>|
-                    <Link to="/woodentoys" style={LinkStyle}> Wooden Toys </Link></span>
+                            <Link to="/allitems" className='link'>All Toys </Link>&rarr;
+                    <Link className='link'to={this.state.Item.category === 'stuffed animal' ? '/stuffedanimals' : '/woodentoys'}> {this.state.Item.category === 'stuffed animal'?'Stuffed Animals': 'Wooden Toys'} </Link>
+                    &rarr;
+                    <Link className='link'to='#'> {this.state.Item.name} </Link>
+                    </span>
                     </Jumbotron>
                     <Jumbotron style={JumbotronStyle}>
                         <Row style={{ float: 'left', alignItems: 'center' }}>

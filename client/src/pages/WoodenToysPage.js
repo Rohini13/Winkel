@@ -20,7 +20,7 @@ const JumbotronStyle = {
     marginLeft: "5rem",
     width: "12rem",
     borderRadius: "20px",
-    padding: "10px",
+    padding: "15px",
     textAlign: "center"
 };
 
@@ -33,15 +33,19 @@ const buttonStyle = {
     borderRadius: "20px",
     background: "white",
     color: "black",
+    float:'right'
+}
+const buttonStyle1 = {
+    border: "None",
+    borderRadius: "20px",
+    background: "hotpink",
+    color: "white",
+    float: 'left'
 }
 
 const spanStyle = {
     float: "right",
     marginTop: "-1.5rem"
-}
-
-const LinkStyle = {
-    color: "hotpink",
 }
 
 
@@ -51,9 +55,13 @@ class DisplayItem extends Component {
         return (
             <div>
                 <Jumbotron  style={ JumbotronStyle }>
+                    <Button href="#" style={buttonStyle1}>&#9825;</Button>
+                    <Button href={"/toydescription/" + this.props.item._id} style={buttonStyle}>View</Button>
                     <img src={require(`../${this.props.item.image}`).default} style={imageStyle}></img>
-                    <br /><br /><h5>{this.props.item.name}</h5><br />
-                    <Button style={buttonStyle}>{this.props.item.price}</Button>
+                    <br /><br /><h5>{this.props.item.name}</h5>
+                    <h5 style={{color:'hotpink'}}>
+                        &#8377;{this.props.item.price}
+                    </h5><br/>
                 </Jumbotron>
             </div>
         )
@@ -79,9 +87,9 @@ export class WoodenToysPage extends Component {
             <div className='container' style={mainStyle}>
                 <h3>Wooden Toys</h3>
                 <span style={spanStyle}>
-                    <Link to="/allitems" style={LinkStyle}>All Toys </Link>| 
-                    <Link to="/stuffedanimals" style={LinkStyle}> Stuffed Animals </Link>| 
-                    <Link to="/woodentoys" style={LinkStyle}> Wooden Toys </Link></span><hr />
+                    <Link to="/allitems" className='link'>All Toys </Link>| 
+                    <Link to="/stuffedanimals" className='link'> Stuffed Animals </Link>| 
+                    <Link to="/woodentoys" className='link'> Wooden Toys </Link></span><hr />
                 <Row>
                 {
                     

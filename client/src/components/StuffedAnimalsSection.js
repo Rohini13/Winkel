@@ -1,4 +1,5 @@
 import axios from 'axios';
+
 import React, { Component } from 'react'
 import {
     Jumbotron,
@@ -13,16 +14,15 @@ const sectionStyle = {
     height: "100%",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
-    marginTop: "-4rem",
+    marginTop: "2rem",
 };
 
 const JumbotronStyle = {
     background: "F5F5F5",
     marginTop: "3.5rem",
-    marginLeft: "5rem",
     width: "80%",
     borderRadius: "20px",
-    padding: "20px",
+    padding: "15px",
     textAlign: "center"
 };
 
@@ -35,21 +35,33 @@ const buttonStyle = {
     borderRadius: "20px",
     background: "white",
     color: "black",
+    float: 'right'
+}
+const buttonStyle1 = {
+    border: "None",
+    borderRadius: "20px",
+    background: "hotpink",
+    color: "white",
+    float: 'left'
 }
 
 class DisplayItem extends Component {
 
     render() {
-            return (
-                this.props.id < 4?
+        return (
+            this.props.id < 4 ?
                 <div>
                     <Jumbotron style={JumbotronStyle}>
+                        <Button href="#" style={buttonStyle1}>&#9825;</Button>
+                        <Button href={"/toydescription/" + this.props.item._id} style={buttonStyle}>View</Button>
                         <img src={require(`../${this.props.item.image}`).default} style={imageStyle}></img>
-                        <br /><br /><h5>{this.props.item.name}</h5><br />
-                            <Button href={"/toydescription/"+this.props.item._id} style={buttonStyle}>{this.props.item.price}</Button>
+                        <br /><br /><h5>{this.props.item.name}</h5>
+                        <h5 style={{ color: 'hotpink' }}>
+                            &#8377;{this.props.item.price}
+                        </h5><br />
                     </Jumbotron>
-                    </div> : null
-            )
+                </div> : null
+        )
 
     }
 }
@@ -68,20 +80,20 @@ export class StuffedAnimalsSection extends Component {
     render() {
         var idx = 0
         return (
-            <Container style={ sectionStyle }>
+            <Container style={sectionStyle}>
                 <h3>Stuffed Animals</h3><hr />
-                    <Row>
-                        {
-                            this.state.Items.map((item, i) => {
-                                    return (<div>
-                                    {   (item.category === "stuffed animal") ?
-                                        <DisplayItem item={item} key={i} id={idx++} /> : null
-                                    }
-                                </div>)
-                            })
-                        }
-                    </Row>
-                    
+                <Row style={{ marginLeft: '3.5rem' }}>
+                    {
+                        this.state.Items.map((item, i) => {
+                            return (<div>
+                                {   (item.category === "stuffed animal") ?
+                                    <DisplayItem item={item} key={i} id={idx++} /> : null
+                                }
+                            </div>)
+                        })
+                    }
+                </Row>
+
             </Container>
         )
     }
