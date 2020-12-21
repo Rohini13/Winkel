@@ -11,7 +11,9 @@ const sectionStyle = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    height: "550px",
+    height: "570px",
+    width: "1300px",
+    marginLeft: '-7rem',
     backgroundImage: "url(" + loadingBackground + ")",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover"

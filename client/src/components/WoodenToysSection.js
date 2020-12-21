@@ -20,7 +20,7 @@ const sectionStyle = {
 const JumbotronStyle = {
     background: "F5F5F5",
     marginTop: "3.5rem",
-    marginLeft: "3rem",
+    marginLeft: "5rem",
     width: "80%",
     borderRadius: "20px",
     padding: "20px",
