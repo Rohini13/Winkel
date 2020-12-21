@@ -17,20 +17,19 @@ router.get('/:id', auth, (req, res) => {
         });
 });
 
-//@route  POST api/cart/:id
-//@desc   create an item in user's cart
+//@route  POST api/cart/:id1/:id2
+//@desc   add an item in user's cart
 //@access Private
-router.post('/:id', auth, (req, res) => {
-    const newItem = new Item({
-        name: req.body.name,
-        price: req.body.price
-    });
-    User.findById(req.params.id)
-        .then(user => {
-            user.cartItems.push(newItem);
-            user.save();
-            res.json(user);
-        });
+router.post('/:id1/:id2', auth, (req, res) => {
+    Item.findById(req.params.id2)
+        .then(item => {
+            User.findById(req.params.id1)
+                .then(user => {
+                    user.cartItems.push(item);
+                    user.save();
+                    res.json(user);
+                });
+        })
 });
 
 //@route  DELETE api/items/:id1:id2
