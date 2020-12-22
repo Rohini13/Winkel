@@ -58,15 +58,15 @@ router.post('/login', function (req, res, next) {
         req.logIn(user, function (err) {
             if (err) { return next(err) }
             //console.log(req.user)
-            // return res.json({
-            //     user: {
-            //         id: user.id,
-            //         username: user.username,
-            //         email: user.email,
-            //         address: user.email,
-            //     }
-            // })
-            res.redirect('/api/'+user._id)
+            return res.json({
+                user: {
+                    id: user.id,
+                    username: user.username,
+                    email: user.email,
+                    address: user.email,
+                }
+            })
+            // res.redirect('/api/'+user._id)
         })
     })(req, res, next);
 })

@@ -14,8 +14,13 @@ import history from './history'
 import Message from './pages/Message';
 import Footer from './components/Footer';
 import Toy from './pages/Toy';
+import About from './pages/About'
+import Delivery from './pages/Delivery'
+import Developers from './pages/Developers';
+
 
 function App() {
+  
   return (
     <div className="App">
       <Router history={history}>
@@ -24,7 +29,7 @@ function App() {
           <Route exact path="/toydescription/:id" render={(props) =>
             <Toy id={props.match.params.id}/>
           }></Route>
-          <Route exact path="/main" render={() =>
+          <Route exact path="/" render={() =>
             <MainPage />
           }></Route>
           <Route exact path="/allitems" render={() =>
@@ -42,14 +47,20 @@ function App() {
           <Route exact path="/login" render={() =>
             <LoginPage />
           }></Route>
-          <Route exact path="/loggedin" render={() =>
-            <Message msg={'You are now Logged in'} />
-          }></Route>
           <Route exact path="/registered" render={() =>
             <Message msg={'User Registered'} />
           }></Route>
           <Route exact path="/logout" render={() =>
             <Message msg={'User Logged Out!'} />
+          }></Route>
+          <Route exact path="/about" render={() =>
+            <About/>
+          }></Route>
+          <Route exact path="/developers" render={() =>
+            <Developers />
+          }></Route>
+          <Route exact path="/delivery" render={() =>
+            <Delivery />
           }></Route>
           <Footer />
         </Provider>

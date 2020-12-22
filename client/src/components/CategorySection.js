@@ -14,7 +14,7 @@ import {Link} from 'react-router-dom'
 const sectionStyle = {
     marginLeft: "-6rem",
     width: "81rem",
-    height: "35rem",
+    height: "30rem",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
     color: "white"

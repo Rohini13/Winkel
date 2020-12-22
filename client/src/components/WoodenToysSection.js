@@ -8,6 +8,8 @@ import {
     Row,
 } from 'reactstrap';
 import { connect } from 'react-redux'
+import WishModal1 from '../pages/WishModal1';
+
 
 const sectionStyle = {
     width: "100%",
@@ -20,10 +22,9 @@ const sectionStyle = {
 const JumbotronStyle = {
     background: "F5F5F5",
     marginTop: "3.5rem",
-    marginLeft: "5rem",
     width: "80%",
     borderRadius: "20px",
-    padding: "20px",
+    padding: "15px",
     textAlign: "center"
 };
 
@@ -36,18 +37,24 @@ const buttonStyle = {
     borderRadius: "20px",
     background: "white",
     color: "black",
+    float:'right'
 }
 
-class DisplayItem extends Component {
 
+class DisplayItem extends Component {
+    
     render() {
         return (
             this.props.id < 4 ?
                 <div>
                     <Jumbotron style={JumbotronStyle}>
+                        <WishModal1 id={this.props.item._id} />
+                        <Button href={"/toydescription/" + this.props.item._id} style={buttonStyle}>View</Button>
                         <img src={require(`../${this.props.item.image}`).default} style={imageStyle}></img>
-                        <br /><br /><h5>{this.props.item.name}</h5><br />
-                        <Button style={buttonStyle}>{this.props.item.price}</Button>
+                        <br /><br /><h5>{this.props.item.name}</h5>
+                        <h5 style={{ color: 'hotpink' }}>
+                            &#8377;{this.props.item.price}
+                        </h5><br />
                     </Jumbotron>
                 </div> : null
         )
@@ -61,7 +68,7 @@ export class WoodenToysSection extends Component {
     }
 
     componentDidMount() {
-        axios.get('api/items')
+        axios.get('../api/items')
             .then(res => {
                 this.setState({ Items: res.data })
             });
@@ -70,8 +77,8 @@ export class WoodenToysSection extends Component {
         var idx = 0
         return (
             <Container style={sectionStyle}>
-                <h3>Wooden Toys</h3><hr />
-                <Row>
+                {this.props.flag ? <h3>More in this Category</h3> :<h3>Wooden Toys</h3>}<hr />
+                <Row style={{marginLeft:'3.5rem'}}>
                     {
                         this.state.Items.map((item, i) => {
                             return (<div>

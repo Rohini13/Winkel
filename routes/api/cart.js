@@ -49,7 +49,6 @@ router.delete('/:id1/:id2', auth, (req, res) => {
 });
 
 function auth(req, res, next) {
-    //console.log(req.user)
     if (req.isAuthenticated()) {
         return next();
     } else {

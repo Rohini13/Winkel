@@ -29,7 +29,7 @@ export class Footer extends Component {
                     },
                     {
                         name: "Stuffed",
-                        link: "/stuffedtoys"
+                        link: "/stuffedanimals"
                     },
 
                 ]
@@ -39,13 +39,13 @@ export class Footer extends Component {
                 resources: [
                     {
                         name: "Locations",
-                        link: "/locations"
+                        link: "/delivery"
                     },
                 ]
             }
         ];
         return (
-            <div style={{ display: 'flex', width: '100%', float:'center', marginTop: '8rem' }}>
+            <div>
                 <SimpleReactFooter
                     description={description}
                     title={title}
