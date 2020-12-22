@@ -144,20 +144,7 @@ export class Toy extends Component {
                         </Jumbotron>
 
                     </Row>
-                    <Modal
-                        isOpen={this.state.modal}
-                        toggle={this.toggle}
-                    >
-                        <ModalHeader toggle={this.toggle}>
-                            Your cart
-                   </ModalHeader>
-                        <ModalBody>
-                            {
-                                window.localStorage.getItem('user') !== null ? <div>{this.state.cartitems}</div> : <div>Not logged in</div>
-                            }
-                        </ModalBody>
-
-                    </Modal>
+                    <CartModal />
                 </div>
                 {this.state.Item.category === 'stuffed animal'?
                 <StuffedAnimalsSection flag={true}/>:
