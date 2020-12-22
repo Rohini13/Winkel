@@ -2,16 +2,23 @@ import axios from 'axios'
 import React, { Component } from 'react'
 import {
     Button,
-    Jumbotron,
     Row,
     Col,
     Modal,
     ModalHeader,
-    ModalBody
+    ModalBody,
+    NavLink
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import history from '../history'
 
+const buttonStyle1 = {
+    border: "None",
+    borderRadius: "20px",
+    background: "hotpink",
+    color: "white",
+    float: 'left'
+}
 export class WishModal extends Component {
     state={
         wishmodal:false,
@@ -26,10 +33,22 @@ export class WishModal extends Component {
             .catch(err=>{
                 this.setState({ authorized: false })
             })
-        this.toggle1()
+        this.toggle()
+    }
+    wish1 = (e) => {
+        if (window.localStorage.getItem('user') !== null) {
+            axios.get(`../api/wishlist/${JSON.parse(window.localStorage.getItem('user')).id}`)
+                .then(res => {
+                    this.setState({ wishlist: res.data, authorized: true })
+                })
+                .catch(err => {
+                    this.setState({ authorized: false })
+                })
+        }
+        this.toggle()
     }
     
-    toggle1 = () => {
+    toggle = () => {
         this.setState({ wishmodal: !this.state.wishmodal });
     }
     
@@ -37,13 +56,11 @@ export class WishModal extends Component {
     render() {
         return (
             <React.Fragment>
-                <Button className='button' style={{ width: '120px' }} onClick={this.wish}>Wishlist</Button>
+                {this.props.purpose === 'single' ? <Button className='button' style={{ width: '120px' }} onClick={this.wish}>Wishlist</Button> : this.props.purpose === 'card' ? <Button style={buttonStyle1} onClick={this.wish}>&#9825;</Button> : <NavLink href="#" onClick={this.wish1} className="inactive" style={{ color: this.props.c }}>Wishlist</NavLink>}   
                 <Modal
                     isOpen={this.state.wishmodal}
-                    toggle={this.toggle1}>
-                    <ModalHeader toggle={this.toggle1}>
-                        Item added to your Wishlist
-                   </ModalHeader>
+                    toggle={this.toggle}>
+                    {this.props.purpose === 'navbar' ? <ModalHeader toggle={this.toggle}>Your Wishlist</ModalHeader> :<ModalHeader toggle={this.toggle}>Item added to your Wishlist</ModalHeader>}
                     <ModalBody>
                         {
                             this.state.authorized ? <div>{this.state.wishlist.map(items => (
@@ -52,24 +69,24 @@ export class WishModal extends Component {
                                         <Col>
                                             <Link to={"../toydescription/" + items._id} className='link' onClick={()=>{
                                                 history.push(`../toydescription/${items._id}`)
-                                                this.toggle1()
+                                                this.toggle()
                                                 history.go()
                                             }}>{items.name}</Link>
                                         </Col>
                                         <Col style={{ color: 'grey' }}>
                                             &#8377;  {items.price}
                                         </Col>
-                                        {/* <Col>
-                                            <Button color= 'danger' onClick={()=>{
+                                        {this.props.purpose==='navbar'?<Col>
+                                            <Button style={{ borderRadius: '20px', backgroundColor: 'salmon', color: 'white', border: 'none' }} onClick={() => {
                                                 axios.delete(`../api/wishlist/${JSON.parse(window.localStorage.getItem('user')).id}/${items._id}`)
                                                     .then(res => {
                                                         this.setState({ wishlist: res.data })
                                                     })
-                                                this.toggle1()
-                                                }}>
-                                                Delete
+                                                this.toggle()
+                                            }}>
+                                                X
                                             </Button>
-                                        </Col> */}
+                                        </Col>:null}
                                     </Row>
                                 </div>
                             ))}</div> : <div>Log in to add items to your wishlist</div>

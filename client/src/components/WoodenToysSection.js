@@ -1,5 +1,4 @@
 import axios from 'axios';
-
 import React, { Component } from 'react'
 import {
     Jumbotron,
@@ -8,7 +7,9 @@ import {
     Row,
 } from 'reactstrap';
 import { connect } from 'react-redux'
-import WishModal1 from '../pages/WishModal1';
+import WishModal from './WishModal';
+import { Link } from 'react-router-dom';
+
 
 
 const sectionStyle = {
@@ -48,7 +49,7 @@ class DisplayItem extends Component {
             this.props.id < 4 ?
                 <div>
                     <Jumbotron style={JumbotronStyle}>
-                        <WishModal1 id={this.props.item._id} />
+                        <WishModal purpose={'card'} id={this.props.item._id} />
                         <Button href={"/toydescription/" + this.props.item._id} style={buttonStyle}>View</Button>
                         <img src={require(`../${this.props.item.image}`).default} style={imageStyle}></img>
                         <br /><br /><h5>{this.props.item.name}</h5>
@@ -77,7 +78,15 @@ export class WoodenToysSection extends Component {
         var idx = 0
         return (
             <Container style={sectionStyle}>
-                {this.props.flag ? <h3>More in this Category</h3> :<h3>Wooden Toys</h3>}<hr />
+                <div>
+                    {this.props.flag ? <h3>More in this Category</h3> : <h3>Wooden Toys</h3>}
+                    <span style={{ float: 'right', marginTop:'-1.5rem' }}>
+                        <Link className='link' to="/woodentoys">
+                            View all Toys &rarr;
+                        </Link>
+                        </span>
+                    <hr />
+                </div>
                 <Row style={{marginLeft:'3.5rem'}}>
                     {
                         this.state.Items.map((item, i) => {

@@ -18,7 +18,7 @@ import { logout } from '../actions/authAction'
 import logop from '../images/logo2p.png'
 import logow from '../images/logo2w.png'
 import user from '../images/user.jpg'
-import WishModal2 from './WishModal2';
+import WishModal from './WishModal';
 import {setDisplayCart} from '../actions/cartActions'
 import { CartModal } from './CartModal';
 
@@ -83,7 +83,7 @@ export class NavBar extends Component {
                                             </NavLink>
                                         </NavItem>
                                         <NavItem>
-                                            <WishModal2 c={this.state.tg}/>
+                                            <WishModal purpose={'navbar'}c={this.state.tg}/>
                                         </NavItem>
                                         <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle1}>
                                             <DropdownToggle color='light' style={{ color: this.state.tg, backgroundColor: this.state.bg, border:'None', fontSize:'18px' }} caret>

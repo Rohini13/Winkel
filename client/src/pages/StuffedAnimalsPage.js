@@ -9,7 +9,7 @@ import {
 } from 'reactstrap';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import WishModal1 from './WishModal1';
+import WishModal from '../components/WishModal';
 
 
 const mainStyle = {
@@ -50,7 +50,7 @@ class DisplayItem extends Component {
         return (
             <div>
                 <Jumbotron style={JumbotronStyle}>
-                    <WishModal1 id={this.props.item._id} />
+                    <WishModal purpose={'card'} id={this.props.item._id} />
                     <Button href={"/toydescription/" + this.props.item._id} style={buttonStyle}>View</Button>
                     <img src={require(`../${this.props.item.image}`).default} style={imageStyle}></img>
                     <br /><br /><h5>{this.props.item.name}</h5>
