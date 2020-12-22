@@ -8,7 +8,7 @@ import {
 
 
 const initialState = {
-    isLaoding: false,
+    isLoading: false,
     user: JSON.parse(window.localStorage.getItem('user'))
 }
 
@@ -18,7 +18,7 @@ export default function (state = initialState, action) {
             window.localStorage.setItem('user', JSON.stringify(action.payload.user))
             return {
                 ...state,
-                isLaoding: false,
+                isLoading: false,
             }
 
         case LOGIN_FAIL:

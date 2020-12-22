@@ -11,7 +11,6 @@ import {
 } from 'reactstrap';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import {CartModal} from '../components/CartModal'
 import {addItem, setDisplayCart} from '../actions/cartActions'
 import WishModal from '../components/WishModal';
 import {StuffedAnimalsSection} from '../components/StuffedAnimalsSection'
@@ -102,9 +101,7 @@ export class Toy extends Component {
     // toggle = () => {
     //     this.setState({ modal: !this.state.modal });
     // }
-    toggle1 = () => {
-        this.setState({ wishmodal: !this.state.wishmodal });
-    }
+    
 
     i = 0
     render() {
@@ -135,7 +132,7 @@ export class Toy extends Component {
                                     <br />
                                     <Button className='button' style={{ width: '120px' }} onClick={this.addToCart}>Add to Cart</Button>
                                     <span>&nbsp; &nbsp;&nbsp;&nbsp;</span>
-                                    <WishModal id={this.props.id} />
+                                    <WishModal purpose={'single'}id={this.props.id} />
                                 </Col>
                                 <Col>
                                     <img src={require(`../${this.state.Item.image}`).default} width='400px'></img>
