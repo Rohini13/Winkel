@@ -38,11 +38,6 @@ export class CartModal extends Component {
         this.props.getItems()
     }
 
-    componentDidUpdate() {
-        console.log("aaja")
-        this.props.getItems()
-    }
-
     render() {
         return (
             <div>
