@@ -8,23 +8,24 @@ const initialState = {
 export default function(state = initialState, action) {
     switch(action.type) {
         case GET_ITEMS:
-            console.log("idhr")
-            console.log(action.payload)
             return {
                 ...state,
                 cartItems: action.payload,
                 displayCart: true
             };
         case DELETE_ITEM:
+            const ind = state.cartItems.findIndex(item => item._id === action.payload)
             return {
                 ...state,
-                cartItems: state.cartItems.filter(item => item._id!==action.payload),
+                cartItems: [...state.cartItems.slice(0, ind),
+                            ...state.cartItems.slice(ind + 1)],
                 displayCart: true
             };
         case ADD_ITEM:
             return {
                 ...state,
-                CartItems: [action.payload, ...state.items],
+                cartItems: [...state.cartItems, action.payload],
+                //CartItems: action.payload,
                 displayCart: true
             }
         case DISPLAY_CART:

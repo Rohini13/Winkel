@@ -27,8 +27,9 @@ router.post('/:id1/:id2', auth, (req, res) => {
                 .then(user => {
                     user.cartItems.push(item);
                     user.save();
-                    var cart = user.cartItems;
-                    res.json(cart);
+                   // var cart = user.cartItems;
+                   // res.json(cart);
+                   res.json(item)
                 });
         })
 });
@@ -39,10 +40,12 @@ router.post('/:id1/:id2', auth, (req, res) => {
 router.delete('/:id1/:id2', auth, (req, res) => {
     User.findById(req.params.id1)
         .then(user => {
-            Item.findById(req.params.id2)
+            Item.findOne({_id: req.params.id2})
                 .then(item => {
                     var index = user.cartItems.indexOf(item);
+                    console.log("haaaaa"+index);
                     user.cartItems.splice(index, 1);
+                    user.save();
                     res.json(user);
                 })
         })

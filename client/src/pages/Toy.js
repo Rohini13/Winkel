@@ -60,7 +60,7 @@ export class Toy extends Component {
             description: '',
         },
         itemID: null,
-        modal: false,
+       // modal: false,
         cartitems: {},
         wishmodal: false,
         wishlist: []
@@ -99,9 +99,9 @@ export class Toy extends Component {
 
     }
 
-    toggle = () => {
-        this.setState({ modal: !this.state.modal });
-    }
+    // toggle = () => {
+    //     this.setState({ modal: !this.state.modal });
+    // }
     toggle1 = () => {
         this.setState({ wishmodal: !this.state.wishmodal });
     }
@@ -156,12 +156,12 @@ export class Toy extends Component {
 }
 
 Toy.propTypes = {
-    displayCart: PropTypes.bool,
-    addItem: PropTypes.func.isRequired
+    addItem: PropTypes.func.isRequired,
+    setDisplayCart: PropTypes.func.isRequired
 }
 
-const mapStateToProps = (state) => ({
-    displayCart: state.displayCart
-})
+// const mapStateToProps = (state) => ({
+//     displayCart: state.displayCart
+// })
 
-export default connect(mapStateToProps, {addItem, setDisplayCart})(Toy)
+export default connect(null, {addItem, setDisplayCart})(Toy)
