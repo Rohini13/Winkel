@@ -58,7 +58,7 @@ export class NavBar extends Component {
             <div>
                 <Navbar fixed="top" expand="md" style={{ backgroundColor: this.state.bg, color: this.state.tg, opacity: 0.9 }} light>
                     <Container>
-                        <NavbarBrand href="/main"><img className='logo' src={this.state.logo} width='100px' /></NavbarBrand>
+                        <NavbarBrand href="/"><img className='logo' src={this.state.logo} width='100px' /></NavbarBrand>
                         <NavbarToggler onClick={this.toggle} />
                         <Collapse isOpen={this.state.isOpen} navbar>
                             <Nav className="mr-auto" navbar  >
@@ -96,7 +96,7 @@ export class NavBar extends Component {
                                                     </NavLink>
                                                 </DropdownItem>
                                                 <DropdownItem style={{ backgroundColor: 'lavenderblush' }}>
-                                                    <NavLink href="/main" onClick={this.props.logout} className="inactive1" style={{ color: 'deeppink' }}>
+                                                    <NavLink href="/" onClick={this.props.logout} className="inactive1" style={{ color: 'deeppink' }}>
                                                         Logout
                                                     </NavLink>
                                                 </DropdownItem>

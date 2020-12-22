@@ -39,7 +39,7 @@ export class Footer extends Component {
                 resources: [
                     {
                         name: "Locations",
-                        link: "/locations"
+                        link: "/delivery"
                     },
                 ]
             }

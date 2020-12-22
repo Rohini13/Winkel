@@ -68,7 +68,7 @@ export class WoodenToysSection extends Component {
     }
 
     componentDidMount() {
-        axios.get('api/items')
+        axios.get('../api/items')
             .then(res => {
                 this.setState({ Items: res.data })
             });
