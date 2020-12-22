@@ -16,7 +16,7 @@ import {addItem, setDisplayCart} from '../actions/cartActions'
 import WishModal from '../components/WishModal';
 import {StuffedAnimalsSection} from '../components/StuffedAnimalsSection'
 import {WoodenToysSection} from '../components/WoodenToysSection'
-
+import PropTypes from 'prop-types'
 
 const sectionStyle = {
     display: 'flex',
@@ -144,7 +144,7 @@ export class Toy extends Component {
                         </Jumbotron>
 
                     </Row>
-                    <CartModal />
+                    
                 </div>
                 {this.state.Item.category === 'stuffed animal'?
                 <StuffedAnimalsSection flag={true}/>:
@@ -153,6 +153,11 @@ export class Toy extends Component {
             
         )
     }
+}
+
+Toy.propTypes = {
+    displayCart: PropTypes.bool,
+    addItem: PropTypes.func.isRequired
 }
 
 const mapStateToProps = (state) => ({

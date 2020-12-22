@@ -1,13 +1,15 @@
 import {DISPLAY_CART, ADD_ITEM, DELETE_ITEM, GET_ITEMS} from '../actions/types'
 
 const initialState = {
-    cartItems: [],
+    cartItems: {},
     displayCart: false
 }
 
 export default function(state = initialState, action) {
     switch(action.type) {
         case GET_ITEMS:
+            console.log("idhr")
+            console.log(action.payload)
             return {
                 ...state,
                 cartItems: action.payload,
@@ -22,7 +24,7 @@ export default function(state = initialState, action) {
         case ADD_ITEM:
             return {
                 ...state,
-                items: [action.payload, ...state.items],
+                CartItems: [action.payload, ...state.items],
                 displayCart: true
             }
         case DISPLAY_CART:

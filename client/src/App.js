@@ -17,6 +17,7 @@ import Toy from './pages/Toy';
 import About from './pages/About'
 import Delivery from './pages/Delivery'
 import Developers from './pages/Developers';
+import CartModal from './components/CartModal'
 
 
 function App() {
@@ -62,6 +63,7 @@ function App() {
           <Route exact path="/delivery" render={() =>
             <Delivery />
           }></Route>
+          <CartModal />
           <Footer />
         </Provider>
       </Router>

@@ -19,7 +19,8 @@ import logop from '../images/logo2p.png'
 import logow from '../images/logo2w.png'
 import user from '../images/user.jpg'
 import WishModal2 from './WishModal2';
-
+import {setDisplayCart} from '../actions/cartActions'
+import { CartModal } from './CartModal';
 
 
 export class NavBar extends Component {
@@ -53,6 +54,10 @@ export class NavBar extends Component {
         });
     }
 
+    toggleCart = () => {
+        this.props.setDisplayCart()
+    }
+
     render() {
         return (
             <div>
@@ -73,7 +78,7 @@ export class NavBar extends Component {
                                 {window.localStorage.getItem('user') ?
                                     <React.Fragment>
                                         <NavItem>
-                                            <NavLink href="#" className="inactive" style={{ color: this.state.tg }}>
+                                            <NavLink href="#" onClick={this.toggleCart} className="inactive" style={{ color: this.state.tg }}>
                                                 Cart
                                             </NavLink>
                                         </NavItem>
@@ -127,6 +132,7 @@ export class NavBar extends Component {
 
 NavBar.propTypes = {
     logout: PropTypes.func.isRequired,
+    setDisplayCart: PropTypes.func.isRequired,
 }
 
-export default connect(null, { logout })(NavBar)
+export default connect(null, { logout, setDisplayCart })(NavBar)

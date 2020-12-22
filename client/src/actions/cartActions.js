@@ -8,21 +8,29 @@ export const setDisplayCart = () => {
 };
 
 export const getItems = () => dispatch => {
-
     const user = JSON.parse(window.localStorage.getItem('user'))
-    axios.post(`api/cart/${user._id}`)
-        .then(res => 
+    if(user == null)
+    return;
+    console.log("kyaa")
+    axios.get(`api/cart/${user._id}`)
+        .then(res => {
             dispatch({
                 type: GET_ITEMS,
                 payload: res.data
             })
+            console.log("ajaaaaaaaaaaaa")
+            console.log(res.data)
+        }
         )
         .catch(err => console.log(err));
+    
 };
 
 export const addItem = (itemid) => (dispatch, getState) => {
     const user = JSON.parse(window.localStorage.getItem('user'));
-    axios.post(`api/cart/${user._id}/${itemid}`)
+    if(user == null)
+    return;
+    axios.post(`../api/cart/${user._id}/${itemid}`)
         .then(res => 
             dispatch({
                 type: ADD_ITEM,
@@ -35,7 +43,9 @@ export const addItem = (itemid) => (dispatch, getState) => {
 
 export const deleteItem = (itemid) => (dispatch, getState) => {
     const user = JSON.parse(window.localStorage.getItem('user'));
-    axios.delete(`api/cart/${user._id}/${itemid}`).then(res =>
+    if(user == null)
+    return;
+    axios.delete(`../api/cart/${user._id}/${itemid}`).then(res =>
         dispatch({
             type: DELETE_ITEM,
             payload: itemid

@@ -10,6 +10,7 @@ import PropTypes from 'prop-types';
 
 class DisplayCart extends Component {
     render() {
+        console.log(items)
         var total = 0
         var items = this.props.items
         var i;
@@ -33,22 +34,21 @@ class DisplayCart extends Component {
 
 export class CartModal extends Component {
 
-    state = {
-        cartitems: {},
-        modal: false
+    componentDidMount() {
+        this.props.getItems()
     }
 
-    componentDidMount() {
-        this.props.setDisplayCart()
+    componentDidUpdate() {
+        console.log("aaja")
         this.props.getItems()
-        this.setState({cartitems: this.props.cartitems})
     }
 
     render() {
         return (
             <div>
+                {console.log(this.props.cartItems)}
                 <Modal
-                    isOpen={this.state.modal}
+                    isOpen={this.props.displayCart}
                     toggle={this.props.setDisplayCart}
                 >
                     <ModalHeader toggle={this.toggle}>
@@ -56,7 +56,7 @@ export class CartModal extends Component {
                     </ModalHeader>
                     <ModalBody>
                         {
-                            window.localStorage.getItem('user')!==null ? <div><DisplayCart items={this.state.cartitems}/></div> : <div>Please login to add items to the cart</div>
+                            window.localStorage.getItem('user')!==null ? <div><DisplayCart items={this.props.cartItems}/></div> : <div>Please login to add items to the cart</div>
                         }
                     </ModalBody>
 
@@ -68,13 +68,12 @@ export class CartModal extends Component {
 
 CartModal.propTypes = {
     getItems: PropTypes.func.isRequired,
-    cartitems: PropTypes.array.isRequired,
-    isAuthenticated: PropTypes.bool
+    cartItems: PropTypes.array.isRequired,
 }
 
 const mapStateToProps = (state) => ({
     cart: state.cart,
-    cartitems: state.cart.cartitems,
+    cartItems: state.cart.cartItems,
     displayCart: state.cart.displayCart
 });
 
