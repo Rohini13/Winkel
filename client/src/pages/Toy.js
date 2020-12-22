@@ -14,7 +14,9 @@ import {
     ModalBody
 } from 'reactstrap';
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
+import {CartModal} from '../components/CartModal'
+import {addItem, setDisplayCart} from '../actions/cartActions'
 
 
 const sectionStyle = {
@@ -49,8 +51,6 @@ const LinkStyle = {
     color: "hotpink",
 }
 
-
-
 export class Toy extends Component {
     state={
         Item:{
@@ -62,7 +62,7 @@ export class Toy extends Component {
         },
         itemID: null,
         modal: false,
-        cartitems: []
+        cartitems: {}
     }
 
     componentDidMount() {
@@ -78,15 +78,19 @@ export class Toy extends Component {
 
     addToCart = () => {
         if(window.localStorage.getItem('user') == null) {
-            return;
+            console.log("No user");
         } else {
-            const user = window.localStorage.getItem('user');
-            axios.post(`api/cart/${user._id}/${this.state.itemID}`)
-            .then(res => {
-                this.setState({cartitems: res.data})
-            });
+            // const user = JSON.parse(window.localStorage.getItem('user'));
+            // console.log(user);
+            // axios.post(`../api/cart/${user._id}/${this.state.itemID}`)
+            // .then(res => {
+            //     console.log(res.data)
+            //     this.setState({cartitems: /*JSON.stringify(*/res.data/*)*/})
+            // });
+            this.props.addItem(this.state.itemID);
+
         }
-        this.setState({modal: !this.state.modal});
+        this.props.setDisplayCart();
 
     }
 
@@ -130,24 +134,15 @@ export class Toy extends Component {
 
 
                 </Row>
-                <Modal
-                isOpen={this.state.modal}
-                toggle={this.toggle}
-               >
-                   <ModalHeader toggle={this.toggle}>
-                       Your cart
-                   </ModalHeader>
-                   <ModalBody>
-                       {
-                           window.localStorage.getItem('user')!==null ? <div>{this.state.cartitems}</div> : <div>Not logged in</div>
-                       }
-                   </ModalBody>
-
-               </Modal>
+                <CartModal />
                 
             </div>
         )
     }
 }
 
-export default connect()(Toy)
+const mapStateToProps = (state) => ({
+    displayCart: state.displayCart
+})
+
+export default connect(mapStateToProps, {addItem, setDisplayCart})(Toy)

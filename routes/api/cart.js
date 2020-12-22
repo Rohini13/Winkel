@@ -27,12 +27,13 @@ router.post('/:id1/:id2', auth, (req, res) => {
                 .then(user => {
                     user.cartItems.push(item);
                     user.save();
-                    res.json(user);
+                    var cart = user.cartItems;
+                    res.json(cart);
                 });
         })
 });
 
-//@route  DELETE api/items/:id1:id2
+//@route  DELETE api/items/:id1/:id2
 //@desc   Delete an item
 //@access Private
 router.delete('/:id1/:id2', auth, (req, res) => {
