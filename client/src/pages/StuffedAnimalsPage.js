@@ -9,6 +9,8 @@ import {
 } from 'reactstrap';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import WishModal1 from './WishModal1';
+
 
 const mainStyle = {
     marginTop: "8rem"
@@ -35,13 +37,6 @@ const buttonStyle = {
     color: "black",
     float: 'right'
 }
-const buttonStyle1 = {
-    border: "None",
-    borderRadius: "20px",
-    background: "hotpink",
-    color: "white",
-    float: 'left'
-}
 
 const spanStyle = {
     float: "right",
@@ -50,12 +45,12 @@ const spanStyle = {
 
 
 class DisplayItem extends Component {
-
+    
     render() {
         return (
             <div>
                 <Jumbotron style={JumbotronStyle}>
-                    <Button href="#" style={buttonStyle1}>&#9825;</Button>
+                    <WishModal1 id={this.props.item._id} />
                     <Button href={"/toydescription/" + this.props.item._id} style={buttonStyle}>View</Button>
                     <img src={require(`../${this.props.item.image}`).default} style={imageStyle}></img>
                     <br /><br /><h5>{this.props.item.name}</h5>

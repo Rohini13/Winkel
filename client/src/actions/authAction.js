@@ -46,7 +46,7 @@ export const login = ({ username, password }) => dispatch => {
                 type: LOGIN_SUCCESS,
                 payload: res.data
             })
-            history.push('/loggedin')
+            history.push('/main')
             history.go(0)
         })
         .catch(err => {

@@ -8,6 +8,8 @@ import {
     Row,
 } from 'reactstrap';
 import { connect } from 'react-redux'
+import WishModal1 from '../pages/WishModal1';
+
 
 const sectionStyle = {
     width: "100%",
@@ -37,22 +39,16 @@ const buttonStyle = {
     color: "black",
     float:'right'
 }
-const buttonStyle1 = {
-    border: "None",
-    borderRadius: "20px",
-    background: "hotpink",
-    color: "white",
-    float: 'left'
-}
+
 
 class DisplayItem extends Component {
-
+    
     render() {
         return (
             this.props.id < 4 ?
                 <div>
                     <Jumbotron style={JumbotronStyle}>
-                        <Button href="#" style={buttonStyle1}>&#9825;</Button>
+                        <WishModal1 id={this.props.item._id} />
                         <Button href={"/toydescription/" + this.props.item._id} style={buttonStyle}>View</Button>
                         <img src={require(`../${this.props.item.image}`).default} style={imageStyle}></img>
                         <br /><br /><h5>{this.props.item.name}</h5>
@@ -81,7 +77,7 @@ export class WoodenToysSection extends Component {
         var idx = 0
         return (
             <Container style={sectionStyle}>
-                <h3>Wooden Toys</h3><hr />
+                {this.props.flag ? <h3>More in this Category</h3> :<h3>Wooden Toys</h3>}<hr />
                 <Row style={{marginLeft:'3.5rem'}}>
                     {
                         this.state.Items.map((item, i) => {
