@@ -10,8 +10,8 @@ export default function(state = initialState, action) {
         case GET_ITEMS:
             return {
                 ...state,
-                cartItems: action.payload,
-                displayCart: true
+                cartItems: action.payload
+               // displayCart: true
             };
         case DELETE_ITEM:
             const ind = state.cartItems.findIndex(item => item._id === action.payload)
@@ -29,6 +29,7 @@ export default function(state = initialState, action) {
                 displayCart: true
             }
         case DISPLAY_CART:
+            console.log("reducer " + state.displayCart)
             return {
                 ...state,
                 displayCart: !state.displayCart

@@ -79,7 +79,6 @@ export class CartModal extends Component {
     render() {
         return (
             <div>
-                {console.log(this.props.cartItems)}
                 <Modal
                     isOpen={this.props.displayCart}
                     toggle={this.props.setDisplayCart}
@@ -103,7 +102,8 @@ CartModal.propTypes = {
     getItems: PropTypes.func.isRequired,
     cartItems: PropTypes.array.isRequired,
     deleteItem: PropTypes.func.isRequired,
-    addItem: PropTypes.func.isRequired
+    addItem: PropTypes.func.isRequired,
+    displayCart: PropTypes.bool.isRequired
 }
 
 const mapStateToProps = (state) => ({
