@@ -2,8 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const config = require('config')
 const passport = require('passport');
-const session = require('express-session')
-
+const session = require('express-session');
+const path = require('path');
 
 const items = require('./routes/api/Items');
 const index = require('./routes/api/index');
