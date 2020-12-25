@@ -5,7 +5,7 @@ const passport = require('passport');
 const session = require('express-session')
 
 
-const items = require('./routes/api/items');
+const items = require('./routes/api/Items');
 const index = require('./routes/api/index');
 const cart = require('./routes/api/cart');
 const wish = require('./routes/api/wishlist');
